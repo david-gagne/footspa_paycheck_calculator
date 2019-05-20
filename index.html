@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Paycheck calculator for Foot Spa LMTs</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="tachyons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="avenir w-100">
+    <nav class="w-100 h2 flex justify-between ph3 pt1">
+        <div class="flex justify-center items-center">
+            <p class="f6">
+                Paycheck Calculator <i class="fas fa-receipt"></i>
+            </p>
+        </div>
+        <div class="flex justify-center items-center">
+            <p class="f6">
+              Foot Spa LMTs
+            </p>
+        </div>
+    </nav>
+    <article id="app" class="pa3 pa5-ns" data-name="slab-stat-small">
+        <main class="pr3 pr5-ns">
+            <h3 class="f6 ttu tracked">Know how much you made.</h3>
+            <p class="f6 lh-copy measure">
+                To calculate your paycheck, enter the number of each
+                massage and upgrade you performed in the fields below.
+                See your paycheck be calculated in real-time.
+            </p>
+        </main>
+        <div class="cf w-60-l">
+            <dl class="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
+                <dd class="f6 fw4 ml0">Ahu</dd>
+                <input class="w4 bb b--gray" type="number" id="ahu" v-model="service.ahu">
+            </dl>
+            <dl class="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
+                <dd class="f6 fw4 ml0">Moai</dd>
+                <input class="w4 bb b--gray" type="number" id="moai" v-model="service.moai">
+            </dl>
+            <dl class="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
+                <dd class="f6 fw4 ml0">Royal Moai</dd>
+                <input class="w4 bb b--gray" type="number" id="royalMoai" v-model="service.royalMoai">
+            </dl>
+            <dl class="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
+                <dd class="f6 fw4 ml0">Polynesian</dd>
+                <input class="w4 bb b--gray" type="number" id="polynesian" v-model="service.polynesian">
+            </dl>
+            <dl class="fl fn-l w-50 dib-l w-auto-l lh-title mr5-l">
+                <dd class="f6 fw4 ml0">Royal Polynesian</dd>
+                <input class="w4 bb b--gray" type="number" id="royalPolynesian" v-model="service.royalPolynesian">
+            </dl>
+            <dl class="fl fn-l w-50 dib-l w-auto-l lh-title">
+                <dd class="f6 fw4 ml0">Crown</dd>
+                <input class="w4 bb b--gray" type="number" id="crown" v-model="upgrades.crown">
+            </dl>
+        </div>
+        <div class="flex items-center justify-center bg-green w-50-l w-70-m mt3">
+            <h3 class="f3-l f3-m f4 white tc lh-copy">
+                Your paycheck will be: <br>
+                <span class="dark-green">$</span>{{ 
+                    Number( service.ahu * 9 ) +
+                    Number( service.moai * 18 ) + 
+                    Number( service.royalMoai * 20 ) + Number( service.polynesian * 27 ) + 
+                    Number( service.royalPolynesian * 29 ) + Number( upgrades.crown * 5 ) 
+                }}
+            </h3>
+        </div>
+    </article>
+    <footer class="pt4 pb2 ph3 ph5-m ph6-l mid-gray w-100">
+        <small class="f6 db tc">© 2019 <b class="ttu"><a class="mid-gray no-underline"
+                    href="https://github.com/david-gagne">Buildpax</a></b>., All Rights Reserved</small>
+        <small class="f6 db tc lh-copy">Made with <i class="fas fa-heart"></i> For my Foot Spa LMT Friends.</small>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+.cf input {
+    border-left-style: none;
+    border-right-style: none;
+    border-top-style: none;
+}
+
+.cf input:focus {
+    outline: none;
+}
+
+footer {
+    position: relative;
+    bottom: 0px;
+}
